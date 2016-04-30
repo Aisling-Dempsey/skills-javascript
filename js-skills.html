@@ -243,7 +243,9 @@
 <p>You should use jQuery for these parts.</p>
 <p>We didn't include jQuery in this document, though&mdash;so your first task is to include it!</p>
 
+<!--I'm putting this here since we're using inline scripting, rather than at the end of the html body-->
 
+<script src="https://code.jquery.com/jquery.js"></script>
 
 <h3>Finding the Button</h3>
 <p>
@@ -256,6 +258,11 @@
 
 <script>
   // code here for above problem
+    function ohNoes(evt){
+        alert("Pop goes the weasel!");
+    }
+
+    $('.tricky-to-find').click(ohNoes);
 </script>
 
 <div class="hint">
@@ -283,6 +290,10 @@
 
 <script>
   // put your code here
+    function swapImage(evt){
+        $("#kittenz-rule").attr('src', "http://i.imgur.com/SoFn41O.jpg");
+    }
+    $("#kittenz-rule").dblclick(swapImage);
 </script>
 
 <div class="hint">
@@ -316,6 +327,14 @@
 
 <script>
   // put your code here
+
+    function hedgeHog(evt){
+        setTimeout(function() {
+        $("#cute-porcupine-image").attr('src', 'http://i.imgur.com/fjaFCea.jpg').fadeIn(2000);
+        }, 1000)
+    }
+
+    $("#make-a-porcupine").click(hedgeHog);
 </script>
 
 <div class="hint">
@@ -500,7 +519,9 @@
   setInterval(blink, 500);
 </script>
 
+<script src="https://code.jquery.com/jquery.js"></script>
 
 <script src="js-skills.js"></script>
+
 </body>
 </html>
