@@ -378,6 +378,16 @@
 
 <script>
   // put your code here
+  function agree(evt){
+      var fave = $('#favorite-food-input').val();
+      $("#agreeable-text").html(fave + ' is my favorite too!');
+      evt.preventDefault();
+
+  }
+
+  $('#agreeable-form').submit(agree);
+
+
 </script>
 
 <div class="hint">
