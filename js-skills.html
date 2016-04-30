@@ -98,6 +98,13 @@
 
 <script>
   // code here for above problem
+      var popupButton = document.getElementById("popup-alert-button");
+
+      function zomgAButton(evt){
+          alert("Stop poking me!");
+      }
+
+      popupButton.addEventListener('click', zomgAButton);
 </script>
 
 
@@ -116,6 +123,17 @@
 
 <script>
   // code here for above-problem
+    var textToChange = document.getElementById("message-to-change");
+
+    var goodbyeButton = document.getElementById("change-hello-to-goodbye-button");
+
+
+    function soLong(evt){
+        textToChange.innerText = "goodbye";
+    }
+
+    goodbyeButton.addEventListener('click', soLong);
+
 </script>
 
 <div class="hint">
@@ -145,6 +163,16 @@
 
 <script>
   // code here for above problem
+    var field = document.getElementById("prevent-form-submission-form");
+
+    function nope (evt){
+        alert("I don't wanna");
+        evt.preventDefault();
+    }
+
+//    prevents both clicks and enters by listening for form submission rather than behaviour on a single element.
+    field.addEventListener('submit', nope);
+
 </script>
 
 <div class="hint">
@@ -176,20 +204,34 @@
 <script>
 //  Here's a stub of a function you can use!
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+    function reverseString() {
+        var msg = "Porcupines are cute";
+
+        // do some stuff here to reverse that string into a new variable
+        var newMsg = [];
+
+        for (var i = 0; i < msg.length; i++){newMsg.push(msg[i])
+        }
+
+        var swapped = newMsg.reverse();
+        console.log(swapped);
+        var condensed = swapped.join();
+        console.log(condensed);
+        var stripped = condensed.replace(/,/g, "");
+        console.log(stripped);
+
+        alert(stripped);
+  }
+
+//I don't understand why string.strip(",") worked in lab but I have to use string.replace(/,/g,"") for it to work now.
+
+
 
 // Here's a stub of event stuff you could use
 //
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+      var button = document.getElementById('reverse-string-button');
+      button.addEventListener('click', reverseString);
 </script>
 
 
